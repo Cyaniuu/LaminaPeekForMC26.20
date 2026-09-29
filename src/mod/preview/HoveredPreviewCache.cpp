@@ -3,6 +3,7 @@
 #include "mod/LaminaPeek.h"
 #include "mod/hover/HoverTracker.h"
 
+#include "mc/client/gui/screens/controllers/ContainerScreenController.h"
 #include "mc/client/gui/screens/controllers/BundleHelper.h"
 #include "mc/deps/nbt/CompoundTag.h"
 #include "mc/deps/nbt/ListTag.h"
@@ -34,7 +35,7 @@ uint64_t fingerprintBundleContent(ItemStackBase const& item, ContainerScreenCont
         // the game's own Bundle UI would read. Reference access only — no
         // stack copies, no registry work.
         for (int index = 0; index < BundleGrid::kMaxSlots; ++index) {
-            ItemStack const& stack = BundleHelper::getItemStackFromBundle(*controller, item, index);
+            ItemStack const& stack = controller->mBundleHelper->getItemStackFromBundle(*controller, item, index);
             if (stack.isNull()) {
                 continue;
             }

@@ -19,9 +19,9 @@ option("trace")
 option_end()
 
 -- The "v" form checks out the upstream git tag directly; the LeviMC xmake-repo
--- had not published a 26.51.3 version entry when this was written. Switch to
--- "levilamina 26.51.3" once it has one.
-add_requires("levilamina v26.51.3", {configs = {target_type = get_config("target_type")}})
+-- had not published a 26.20.7 version entry when this was written. Switch to
+-- "levilamina 26.20.7" once it has one.
+add_requires("levilamina 26.20.7", {configs = {target_type = get_config("target_type")}})
 
 add_requires("levibuildscript")
 
